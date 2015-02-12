@@ -1,16 +1,16 @@
 //Max_heapify 
 
-max_heapify(A, i){
-	l = left(i);
-	r = right(i);
+max_heapify(A, index){
+	l = left(index);
+	r = right(index);
 
-	if(l <= A.heap.size && A[l] > A[i])
+	if(l <= A.heap.size && A[l] > A[index])
 		largest = l;
 		else
 			largest = i;
 			if(r < A.heap.size && A[r] > A[largest])
 				largest = r;
-			if(largest != i){
+			if(largest != index){
 				swap(A[i].A[largest]);
 				max_heapify(A.largest);
 			}
