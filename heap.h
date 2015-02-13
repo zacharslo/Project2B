@@ -32,7 +32,7 @@ class heap {
 		
 	private:
 		string p;
-		heap leftChild;
-		heap rightChild;
+		vector<string> leftChild;		//change vector<string> to heap?
+		vector<string> rightChild;		//change vector<string> to heap?
 		int index;
 };
