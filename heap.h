@@ -13,13 +13,13 @@ using namespace std;
 class heap {
 	public:
 		heap(const vector<string> wordlist);
-		string parent(const int index);
-		heap left(const int index);
-		heap right(const int index);
+		int parent(const int index);
+		int left(const int index);
+		int right(const int index);
 		void getItem(const int n);
 		
 		void initializeMaxHeap();
-		void maxHeapify(const int index);
+		void maxHeapify(int *a, const int index);
 		void buildMaxHeap();
 		
 		void initializeMinHeap();
