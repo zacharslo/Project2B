@@ -10,6 +10,7 @@
 
 using namespace std;
 
+template<class T>
 class heap {
 	public:
 		heap(const vector<string> wordlist);

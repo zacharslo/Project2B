@@ -9,19 +9,23 @@ Authors: Zach Sloane and Andrew Blum
 
 using namespace std;
 
-heap::parent(int i) {
+template<class T>
+int heap<T>::parent(int i) {
 	return int(i/2);
 }
 
-heap::left(int i) {
-	return i * 2;
+template<class T>
+int heap::left(int i) {
+	return i * 2;	
 }
 
-heap::right(int i){
+template<class T>
+int heap::right(int i){
 	return i * 2 + 1;
 }
 
-heap::maxHeapify(int *a, int i) {
+template <class T>
+int heap<T>::maxHeapify(int *a, int i) {
 	int l = left(i);
 	int r = right(i);
 	int largest, temp;
@@ -49,7 +53,8 @@ heap::maxHeapify(int *a, int i) {
 	
 }
 
-heap::buildMaxHeap(int *a, int n) {
+template <class T>
+int heap<T>::buildMaxHeap(int *a, int n) {
 	int i;
 	for (i = n/2; i >= 1; i--) {
 		maxHeapify(a,i);
