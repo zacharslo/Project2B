@@ -1,5 +1,8 @@
 //By Andrew Blum and Zach Sloane
 
+#ifndef HEAP_CLASS
+#define HEAP_CLASS
+
 #include <stdlib.h>
 #include <string>
 #include <vector>
@@ -15,30 +18,26 @@ class heap {
 	public:
 		heap(const vector<string> wordlist);
 		int parent(const int index);
-		string left(int index);
-		int left() const {return leftindex;};
-		string right(int index);
-		int right() const {return rightindex;};
-		void getItem(const int n);
+		int left(int index) const;
+		int right(int index) const;
+		void getItem(const int n) const {return h[n];};
 		
-		void initializeMaxHeap();
-		void maxHeapify(int *a, const int index);
-		void buildMaxHeap(int *a, int n);
+		void initializeMaxHeap(vector<T> *a, const int index);
+		void maxHeapify(vector<T> *a, const int index);
+		void buildMaxHeap(vector<T> *a, int n);
 		
-		void initializeMinHeap();
-		void minHeapify(const int index);
-		void buildMinHeap(int *a, int n);
+		void initializeMinHeap(vector<T> *a, const int index);
+		void minHeapify(vector<T> *a, const int index);
+		void buildMinHeap(vector<T> *a, const int index);
 		
-		void heapsort(int *a, int size);
+		void heapsort();
 		
-		int size() const {return s;};
+		int size() const {return h.size();};
 		
 	private:
 		vector<string> h;
 		
-		int parentindex;
-		int leftindex;		//change vector<string> to heap?
-		int rightindex;		//change vector<string> to heap?
 		int index;
-		int s;
 };
+
+#endif
