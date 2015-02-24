@@ -42,6 +42,7 @@ void search() {
 	clock_t CPUtimeHeap;
 	clock_t CPUtimeSort1;
 	clock_t CPUtimeSort2;
+//	clock_t CPUtimeSort3;
 	clock_t CPUtimeSearch;
 	clock_t Totaltime;
 	
@@ -63,8 +64,13 @@ void search() {
 	
 	//save how long it took to quicksort
 	CPUtimeSort2 = clock();
+	/*
+	wordl.mergeSort(0, wordl.getWordList().size() - 1);
+	cout << "\nSorted using Merge Sort.\n";
 	
-	
+	//save how long it took to quicksort
+	CPUtimeSort3 = clock();
+	*/
 	cout << "Words found in your grid:\n";
 	wordList matches = findMatches(grid1, wordl.getWordList());
 	
@@ -76,7 +82,8 @@ void search() {
 	cout << "\nThe time it took to convert the word list to a heap: " << difftime(CPUtimeHeap, CPUtimeStart2);
 	cout << "\nThe time it took to insertionsort the word list: " << difftime(CPUtimeSort1, CPUtimeHeap);
 	cout << "\nThe time it took to quicksort the word list: " << difftime(CPUtimeSort2, CPUtimeSort1);
-	cout << "\nThe time it took to search the grid for the words in the word list: " << difftime(CPUtimeSearch, CPUtimeSort2) << "\n";
+//	cout << "\nThe time it took to mergesort the word list: " << difftime(CPUtimeSort3, CPUtimeSort2);
+	cout << "\nThe time it took to search the grid for the words in the word list: " << difftime(CPUtimeSearch, CPUtimeSort2/*CPUtimeSort3*/) << "\n";
 	cout << "\nThe total time it took to heap, quicksort, insert sort, and search the grid: " << difftime(CPUtimeSearch, CPUtimeStart2) << "\n";
 	cout << "\nThe total time it took run this program: " << difftime(CPUtimeSearch, CPUtimeStart1) << "\n";
 	
