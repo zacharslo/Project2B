@@ -10,6 +10,9 @@
 #include <fstream>
 #include <iostream>
 #include <math.h>
+#include <algorithm>
+#include <iostream>
+#include "wordList.cpp"
 
 using namespace std;
 

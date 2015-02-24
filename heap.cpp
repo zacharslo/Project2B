@@ -7,10 +7,7 @@ Authors: Zach Sloane and Andrew Blum
 #ifndef HEAP_FUNCTS
 #define HEAP_FUNCTS
 
-#include <algorithm>
-#include <iostream>
 #include "heap.h"
-#include "wordList.cpp"
 
 using namespace std;
 
