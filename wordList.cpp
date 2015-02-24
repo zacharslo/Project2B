@@ -9,6 +9,7 @@ Description: Used to read from a text file and store a list of words as a vector
 #define WORDLIST_FUNCTS
 
 #include "wordList.h"
+#include "heap.h"
 
 //initiates wordlist
 wordList::wordList() {

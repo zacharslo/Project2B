@@ -16,6 +16,7 @@ Description: Used to read from a text file and store a list of words as a vector
 #include <iostream>
 #include <math.h>
 
+
 using namespace std;
 
 //overload << operator
