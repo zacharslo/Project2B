@@ -9,7 +9,6 @@ Description: Used to read from a text file and store a list of words as a vector
 #define WORDLIST_FUNCTS
 
 #include "wordList.h"
-#include "heap.h"
 
 //initiates wordlist
 wordList::wordList() {
@@ -91,7 +90,6 @@ void wordList::mergeSort() {
 	first = merge(temp1);
 	vector<string> temp2 = second;
 	second = merge(temp2);
-	cout << "put back together";
 	for(int k = 0; k < words.size() - 1; k++) {
 		if(a < first.size() - 1 && b < second.size() - 1) {
 			if(first[a].compare(second[b]) < 0) {
@@ -156,7 +154,6 @@ vector<string> wordList::merge(const vector<string> list) {
 	if(half.size() == 1) {
 		return half;
 	}
-	cout << "1";
 	int middle = half.size()/2;
 	vector<string> first(middle);
 	vector<string> second(words.size() - middle);
@@ -168,14 +165,12 @@ vector<string> wordList::merge(const vector<string> list) {
 		second[j] = half[a];
 		a++;
 	}
-	cout << "2";
 	a = 0;
 	int b = 0;
 	vector<string> temp1 = first;
 	first = merge(temp1);
 	vector<string> temp2 = second;
 	second = merge(temp2);
-	cout << "3";
 	for(int k = 0; k < half.size() - 1; k++) {
 		if(a < first.size() - 1 && b < second.size() - 1) {
 			if(first[a].compare(second[b]) < 0) {
@@ -196,7 +191,6 @@ vector<string> wordList::merge(const vector<string> list) {
 			b++;
 		}
 	}
-	cout << "4";
 	return half;
 }
 
