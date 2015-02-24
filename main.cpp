@@ -5,6 +5,7 @@ Authors: Andrew Blum and Zach Sloane
 Description: Word search
 */
 
+#include "heap.cpp"
 #include "grid.cpp"
 #include "wordList.cpp"
 #include <string>
@@ -16,13 +17,8 @@ wordList findMatches(const wordList& wordl, const grid& grid1);
 void search(const int alg);
 
 int main() {
-	int sort;
-	cout << "What type of sorting would you like to use?\nEnter \"0\" to use Insertion Sort.\nEnter \"1\" to use Quick Sort.\nEnter \"2\" to use Merge Sort.\n\nWhat is your pick? ";
-	cin >> sort;
-	if(sort < 0 || sort > 2) {
-		cout << "You have enterred an improper value, Quick Sort will be used.\n\n";
-		sort = 1;
-	}
+	int sort = 1; 
+	
 	search(sort);
 	
 	return 0;
@@ -37,8 +33,8 @@ wordList findMatches(const grid& grid1, const vector<string>& wordl) {
 void search(const int alg) {
 	clock_t CPUtimeStart1;
 	CPUtimeStart1 = clock();
-	string fileName;
-	cout << "Enter the file name of the grid you would like to use: ";
+	string fileName = "input15";
+	cout << "Grid file to be used: input15.txt\n";
 	cin >> fileName;
 	grid grid1 = grid(fileName);
 	wordList wordl = wordList();
@@ -52,20 +48,7 @@ void search(const int alg) {
 	
 	cout << "\nSorting....\n";
 	
-	//uses a sort based off of user input.
-	if(alg == 0) {
-		wordl.insertionSort();
-		cout << "\nSorted using Insertion Sort.\n";
-		wordl.printWordList();
-	}
-	if(alg == 1) {
-		wordl.quickSort(0, wordl.getWordList().size() - 1);
-		cout << "\nSorted using Quick Sort.\n";
-	}
-	if(alg == 2) {
-		wordl.mergeSort();
-		cout << "\nSorted using Merge Sort.\n";
-	}
+
 	//save how long it took to sort
 	CPUtimeSort = clock();
 	
