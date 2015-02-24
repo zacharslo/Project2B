@@ -15,25 +15,30 @@ class heap {
 	public:
 		heap(const vector<string> wordlist);
 		int parent(const int index);
-		int left(const int index);
-		int right(const int index);
+		string left(int index);
+		int left() const {return leftindex;};
+		string right(int index);
+		int right() const {return rightindex;};
 		void getItem(const int n);
 		
 		void initializeMaxHeap();
 		void maxHeapify(int *a, const int index);
-		void buildMaxHeap();
+		void buildMaxHeap(int *a, int n);
 		
 		void initializeMinHeap();
 		void minHeapify(const int index);
-		void buildMinHeap();
+		void buildMinHeap(int *a, int n);
 		
-		void heapsort();
+		void heapsort(int *a, int size);
 		
-		int size;
+		int size() const {return s;};
 		
 	private:
-		string p;
-		vector<string> leftChild;		//change vector<string> to heap?
-		vector<string> rightChild;		//change vector<string> to heap?
+		vector<string> h;
+		
+		int parentindex;
+		int leftindex;		//change vector<string> to heap?
+		int rightindex;		//change vector<string> to heap?
 		int index;
+		int s;
 };

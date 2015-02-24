@@ -5,7 +5,7 @@ Authors: Zach Sloane and Andrew Blum
 */
 
 #include <algorithm>
-#include<iostream>
+#include <iostream>
 #include "heap.h"
 
 
@@ -17,7 +17,7 @@ int heap<T>::parent(int i) {
 }
 
 template<class T>
-int heap::left(int i) {
+string heap<T>::left(int i) {
 	if (i == 0){ //check that i is non-zero
 		return 1;
 	}
@@ -26,7 +26,7 @@ int heap::left(int i) {
 }
 
 template<class T>
-int heap::right(int i){
+string heap<T>::right(int i){
 	if (i == 0){ //check that i is non-zero
 		return 2;
 	}
@@ -35,11 +35,11 @@ int heap::right(int i){
 }
 
 template <class T>
-int heap<T>::maxHeapify(int *a, int i) {
+void heap<T>::maxHeapify(int *a, int i) {
 	int l = left(i);
 	int r = right(i);
 	int largest, temp;
-	int size = a.size();
+	int size = s; 		//a.size();		//***********************************
 	
 	if ((l <= size) &&(a[1] > a[i])){ //base case
 		largest = l;
@@ -66,7 +66,7 @@ int heap<T>::maxHeapify(int *a, int i) {
 }
 
 template <class T>
-int heap<T>::buildMaxHeap(int *a, int n) {
+void heap<T>::buildMaxHeap(int *a, int n) {
 	int i;
 	for (i = n/2; i >= 1; i--) {
 		maxHeapify(a,i);
@@ -74,8 +74,8 @@ int heap<T>::buildMaxHeap(int *a, int n) {
 }
 
 template <class T> 
-heap<T>::heapSort(int *a, int size) {
-	size = a.size();
+void heap<T>::heapsort(int *a, int size) {
+	size = s;	//a.size();		//***********************************
 	
 	while(size > 1) {
 		swap(a[1], a[size - 1]);
@@ -84,8 +84,8 @@ heap<T>::heapSort(int *a, int size) {
 }
 
 template <class T>
-heap<T>::buildMaxHeap(int *a, int n) {
-	for((int i = n/2); i >= 1; i --) {
+void heap<T>::buildMinHeap(int *a, int n) {
+	for(int i = n/2; i >= 1; i --) {
 		maxHeapify(a, i);
 	}
 }
