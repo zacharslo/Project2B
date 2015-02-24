@@ -48,7 +48,6 @@ void wordList::insertionSort() {
 				words.insert(words.begin() + i, temp);
 			}
 		}
-		cout << "outside";
     }
 }
 
