@@ -22,9 +22,9 @@ class heap {
 		int right(int index) const;
 		void getItem(const int n) const {return h[n];};
 		
-		void initializeMaxHeap(vector<T> *a, const int index);
-		void maxHeapify(vector<T> *a, const int index);
-		void buildMaxHeap(vector<T> *a, int n);
+		void initializeMaxHeap(vector<T> a, const int index);
+		void maxHeapify(vector<T> a, const int index);
+		void buildMaxHeap(vector<T> a, int n);
 		
 		void initializeMinHeap(vector<T> *a, const int index);
 		void minHeapify(vector<T> *a, const int index);
@@ -35,7 +35,7 @@ class heap {
 		int size() const {return h.size();};
 		
 	private:
-		vector<string> h;
+		vector<T> h;
 		
 		int index;
 };

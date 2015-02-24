@@ -46,7 +46,7 @@ int heap<T>::right(int i) const {
 }
 
 template <class T>
-void heap<T>::maxHeapify(vector<T> *a, const int i) {
+void heap<T>::maxHeapify(vector<T> a, const int i) {
 	int l = left(i);
 	int r = right(i);
 	int largest, temp;
@@ -70,12 +70,12 @@ void heap<T>::maxHeapify(vector<T> *a, const int i) {
 }
 
 template <class T>
-void heap<T>::initializeMaxHeap(vector<T> *a, int n) {
+void heap<T>::initializeMaxHeap(vector<T> a, int n) {
 	buildMaxHeap(a, n);
 }
 
 template <class T>
-void heap<T>::buildMaxHeap(vector<T> *a, int n) {
+void heap<T>::buildMaxHeap(vector<T> a, int n) {
 	int i;
 	for (i = n/2; i >= 1; i--) {
 		maxHeapify(a, i);
